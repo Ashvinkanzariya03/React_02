@@ -11,7 +11,7 @@ export default function TextForm(props) {
       let newText = text.toLowerCase()
       setText(newText)
   }
-  const handelonchange=(e)=>{
+  const handelonchange=(e)=>{ 
     // console.log("change");
     setText(e.target.value)
   }
