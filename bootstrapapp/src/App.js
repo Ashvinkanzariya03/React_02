@@ -4,6 +4,7 @@ import Navbar from "./Components/Navbar";
 import TextForm from "./Components/TextForm";
 import About from "./Components/About";
 import Alert from "./Components/Alert";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -18,17 +19,21 @@ function App() {
   };
   return (
     <>
-      <Navbar
-        title="First App"
-        about="About"
-        mode={mode}
-        toggleMode={toggleMode}
-      />
-      <Alert alert={'Something Is Worng'}/>
-      <div className="container my-3">
+      <Alert alert={"Something Is Worng"} />
+      {/* <div className="container my-3">
         <TextForm heading="Enter your text below" mode={mode} />
-      </div>
-      <About />
+      </div> */}
+      <BrowserRouter>
+        <Navbar title="First App" mode={mode} toggleMode={toggleMode} />
+        <Routes>
+          <Route
+            path="/"
+            element={<TextForm heading="Enter your text below" mode={mode} />}
+          />
+          <Route path="/about" element={<About />} />
+          <Route path="/" element={<App/>} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
