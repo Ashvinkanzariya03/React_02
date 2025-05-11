@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "./Components/Navbar";
 import TextForm from "./Components/TextForm";
 import About from "./Components/About";
+import Alert from "./Components/Alert";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -23,6 +24,7 @@ function App() {
         mode={mode}
         toggleMode={toggleMode}
       />
+      <Alert alert={'Something Is Worng'}/>
       <div className="container my-3">
         <TextForm heading="Enter your text below" mode={mode} />
       </div>
