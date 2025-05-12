@@ -8,7 +8,7 @@ export default function About() {
   const [btnText, setBtnText] = useState("Dark Mode");
 
   const modeChange = () => {
-    if (myStyle.color == "black") {
+    if (myStyle.color === "black") {
       setMyStyle({
         color: "white",
         backgroundColor: "black",
